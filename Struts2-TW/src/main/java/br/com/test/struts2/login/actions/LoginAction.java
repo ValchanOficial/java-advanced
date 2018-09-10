@@ -1,4 +1,4 @@
-package br.com.treinaweb.teste.struts2.login.actions;
+package br.com.test.struts2.login.actions;
 
 public class LoginAction {
 	
@@ -18,7 +18,7 @@ public class LoginAction {
 		this.senha = senha;
 	}
 	
-	public String execute() {
+	public String logar() {
 		if(this.email.equals("teste") && this.senha.equals("teste")) {
 			return "SUCCESS";
 		} else {
