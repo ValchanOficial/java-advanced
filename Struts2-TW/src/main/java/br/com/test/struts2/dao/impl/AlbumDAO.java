@@ -1,30 +1,58 @@
 package br.com.test.struts2.dao.impl;
 
 import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import br.com.test.struts2.dao.interfaces.IDAOGenerico;
+import br.com.test.struts2.hibernate.utils.HibernateSessionFactoryUtils;
 import br.com.test.struts2.models.Album;
 
 public class AlbumDAO implements IDAOGenerico<Album, Integer>{
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Album> todos() {
-		return null;
+		List<Album> albuns = null;
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		albuns = (List<Album>)session.createQuery("from Album").list();
+		session.close();
+		return albuns;
 	}
 
 	@Override
 	public Album porId(Integer id) {
-		return null;
+		Album album = null;
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		album = session.get(Album.class, id);
+		session.close();
+		return album;
 	}
 
 	@Override
-	public void inserir(Album modelo) {		
+	public void inserir(Album modelo) {
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.save(modelo);
+		session.close();
 	}
 
 	@Override
-	public void atualizar(Album modelo) {		
+	public void atualizar(Album modelo) {
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.update(modelo);
+		session.close();
 	}
 
 	@Override
-	public void deletar(Album modelo) {		
+	public void deletar(Album modelo) {
+		SessionFactory sf = HibernateSessionFactoryUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.delete(modelo);
+		session.close();
 	}
 }
