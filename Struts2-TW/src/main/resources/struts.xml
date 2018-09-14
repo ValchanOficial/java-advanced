@@ -14,4 +14,12 @@
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
 	</package>
+	<package name="albuns" namespace="/Album" extends="struts-default">
+		<action name="ListarAlbuns"
+		class="br.com.test.struts2.controllers.impl.AlbumController"
+		method="listar">
+			<result name="SUCCESS">pages/listar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+	</package>
 </struts>
