@@ -39,6 +39,7 @@ public abstract class Controller<M, K> {
 	public abstract String listar();
 	public abstract String detalhar();
 	public abstract String inserir();
+	public abstract String prepararAlterar();
 	public abstract String alterar();
 	public abstract String deletar();
 }

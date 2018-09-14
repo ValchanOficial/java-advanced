@@ -21,5 +21,38 @@
 			<result name="SUCCESS">pages/listar.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
+		
+		<action name="Inserir">
+			<result>pages/inserir.jsp</result>
+		</action>
+		
+		<action name="InserirAlbum"
+			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="inserir">
+			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Alterar"
+			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="prepararAlterar">
+			<result name="SUCCESS">pages/alterar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="AlterarAlbum"
+			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="alterar">
+			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
+		<action name="Excluir"
+			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="deletar">
+			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		
 	</package>
 </struts>

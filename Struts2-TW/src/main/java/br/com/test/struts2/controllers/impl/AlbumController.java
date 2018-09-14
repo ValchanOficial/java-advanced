@@ -30,14 +30,40 @@ public class AlbumController extends Controller<Album, Integer>{
 	}
 	@Override
 	public String inserir() {
-		return null;
+		try {
+			this.dao.inserir(getModelo());
+			return SUCCESS;
+		}catch(Exception e) {
+			return ERROR;
+		}
 	}
 	@Override
 	public String alterar() {
-		return null;
+		try {
+			this.dao.atualizar(getModelo());
+			return SUCCESS;
+		}catch(Exception e) {
+			return ERROR;
+		}
 	}
 	@Override
 	public String deletar() {
-		return null;
+		try {
+			Album album = this.dao.porId(getId());
+			this.dao.deletar(album);
+			return SUCCESS;
+		}catch(Exception e) {
+			return ERROR;
+		}
+	}
+	@Override
+	public String prepararAlterar() {
+		try {
+			Album album = this.dao.porId(getId());
+			setModelo(album);
+			return SUCCESS;
+		}catch(Exception e) {
+			return ERROR;
+		}
 	}
 }
