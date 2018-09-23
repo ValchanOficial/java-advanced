@@ -1,7 +1,6 @@
 package br.com.test.struts2.models;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,5 +40,4 @@ public class Album implements Serializable{
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
-	
 }
