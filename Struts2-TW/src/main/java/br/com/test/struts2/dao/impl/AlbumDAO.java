@@ -20,7 +20,6 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer>{
 		entityManagerFactory.close();
 		return albuns;
 	}
-
 	@Override
 	public Album porId(Integer id) {
 		Album album = null;
@@ -31,7 +30,6 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer>{
 		entityManagerFactory.close();
 		return album;
 	}
-
 	@Override
 	public void inserir(Album modelo) {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TreinaWebTesteJPA");
@@ -42,7 +40,6 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer>{
 		entityManager.close();
 		entityManagerFactory.close();
 	}
-
 	@Override
 	public void atualizar(Album modelo) {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TreinaWebTesteJPA");
@@ -53,12 +50,12 @@ public class AlbumDAO implements IDAOGenerico<Album, Integer>{
 		entityManager.close();
 		entityManagerFactory.close();
 	}
-
 	@Override
 	public void deletar(Album modelo) {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TreinaWebTesteJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
+		modelo = entityManager.merge(modelo);//attached
 		entityManager.remove(modelo);
 		entityManager.getTransaction().commit();
 		entityManager.close();
