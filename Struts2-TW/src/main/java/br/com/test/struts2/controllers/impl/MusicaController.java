@@ -1,15 +1,34 @@
 package br.com.test.struts2.controllers.impl;
 
+import java.util.List;
 import br.com.test.struts2.controllers.interfaces.Controller;
+import br.com.test.struts2.dao.impl.AlbumDAO;
 import br.com.test.struts2.dao.impl.MusicaDAO;
+import br.com.test.struts2.dao.interfaces.IDAOGenerico;
+import br.com.test.struts2.models.Album;
 import br.com.test.struts2.models.Musica;
 
 public class MusicaController extends Controller<Musica, Integer>{
 
+	private List<Album> albuns;
+	private int albumId;
+	private IDAOGenerico<Album, Integer> albumDao = new AlbumDAO();
+	
+	public List<Album> getAlbuns() {
+		return albuns;
+	}
+	public void setAlbuns(List<Album> albuns) {
+		this.albuns = albuns;
+	}
+	public int getAlbumId() {
+		return albumId;
+	}
+	public void setAlbumId(int albumId) {
+		this.albumId = albumId;
+	}
 	public MusicaController() {
 		super(new MusicaDAO());
 	}
-
 	@Override
 	public String listar() {
 		try {
@@ -28,10 +47,21 @@ public class MusicaController extends Controller<Musica, Integer>{
 			return ERROR;
 		}
 	}
+	public String prepararInserir() {
+		try {
+			albuns = albumDao.todos(); 
+			return SUCCESS;
+		}catch(Exception e) {
+			return ERROR;
+		}
+	}
 	@Override
 	public String inserir() {
 		try {
-			this.dao.inserir(getModelo());
+			Musica musica = getModelo();
+			Album albumSelecionado = albumDao.porId(getId());
+			musica.setAlbum(albumSelecionado);
+			dao.inserir(musica);
 			return SUCCESS;
 		}catch(Exception e) {
 			return ERROR;

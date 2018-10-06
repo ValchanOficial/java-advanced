@@ -3,50 +3,51 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="teste" namespace="/Teste" extends="struts-default">
+	<package name="teste" namespace="/Teste"
+		extends="struts-default">
 		<action name="FazerLogin">
 			<result>pages/login.jsp</result>
 		</action>
 		<action name="Login"
-		class="br.com.test.struts2.login.actions.LoginAction"
-		method="logar">
+			class="br.com.test.struts2.login.actions.LoginAction" method="logar">
 			<result name="SUCCESS">pages/sucesso.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
 	</package>
-	<package name="albuns" namespace="/Album" extends="struts-default">
+	<package name="albuns" namespace="/Album"
+		extends="struts-default">
 		<action name="ListarAlbuns"
-		class="br.com.test.struts2.controllers.impl.AlbumController"
-		method="listar">
+			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="listar">
 			<result name="SUCCESS">pages/listar.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
-		
+
 		<action name="Inserir">
 			<result>pages/inserir.jsp</result>
 		</action>
-		
+
 		<action name="InserirAlbum"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="inserir">
 			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
-		
+
 		<action name="Alterar"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="prepararAlterar">
 			<result name="SUCCESS">pages/alterar.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
-		
+
 		<action name="AlterarAlbum"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="alterar">
 			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
-		
+
 		<action name="Excluir"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="deletar">
@@ -55,6 +56,50 @@
 		</action>
 		<action name="Detalhar"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
+			method="detalhar">
+			<result name="SUCCESS">pages/detalhar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+	</package>
+
+	<package name="musicas" namespace="/Musica"
+		extends="struts-default">
+		<action name="ListarMusicas"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="prepararInserir">
+			<result name="SUCCESS">pages/inserir.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		<action name="Inserir">
+			<result>pages/inserir.jsp</result>
+		</action>
+		<action name="InserirMusica"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="inserir">
+			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		<action name="Alterar"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="prepararAlterar">
+			<result name="SUCCESS">pages/alterar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		<action name="AlterarMusica"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="alterar">
+			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+
+		<action name="Excluir"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="deletar">
+			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		<action name="Detalhar"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="detalhar">
 			<result name="SUCCESS">pages/detalhar.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>

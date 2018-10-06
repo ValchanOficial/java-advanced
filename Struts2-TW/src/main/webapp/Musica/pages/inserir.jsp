@@ -6,14 +6,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Inserção de álbum</title>
+		<title>Inserção de música</title>
 	</head>
 	<body>
-		<h2>Inserção de álbum</h2>
+		<h2>Inserção de música</h2>
 		<br/><br/>
-		<s:form action="InserirAlbum">
-			<s:textfield label="Titulo do álbum" name="modelo.nome"/>
-			<s:textfield label="Ano de lançamento" name="modelo.ano"/>
+		<s:form action="InserirMusica">
+			<s:textfield label="Titulo da música" name="modelo.nome"/>
+			<s:select label="Álbum" headerKey="-1" headerValue="Selecione um álbum"
+						list="albuns" name="albumId" listKey="nome" listValue="id"/>
 			<s:submit/>
 		</s:form>
 	</body>
