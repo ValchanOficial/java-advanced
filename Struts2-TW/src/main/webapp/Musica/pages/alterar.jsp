@@ -6,15 +6,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Alteração de álbum</title>
+		<title>Alteração de música</title>
 	</head>
 	<body>
-		<h2>Alteração de álbum</h2>
+		<h2>Alteração de música</h2>
 		<br/><br/>
-		<s:form action="AlterarAlbum">
-			<s:hidden name="modelo.id"/>
-			<s:textfield label="Titulo do álbum" name="modelo.nome"/>
-			<s:textfield label="Ano de lançamento" name="modelo.ano"/>
+		<s:form action="AlterarMusica">
+		<s:hidden name="modelo.id" />
+			<s:textfield label="Titulo da música" name="modelo.nome"/>
+			<s:select label="Álbum" headerKey="-1" headerValue="Selecione um álbum"
+						list="albuns" name="albumId" listKey="id" listValue="nome"/>
 			<s:submit/>
 		</s:form>
 	</body>

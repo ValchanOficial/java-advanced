@@ -62,16 +62,18 @@
 		</action>
 	</package>
 
-	<package name="musicas" namespace="/Musica"
-		extends="struts-default">
+	<package name="musicas" namespace="/Musica" extends="struts-default">
 		<action name="ListarMusicas"
+			class="br.com.test.struts2.controllers.impl.MusicaController"
+			method="listar">
+			<result name="SUCCESS">pages/listar.jsp</result>
+			<result name="ERROR">pages/erro.jsp</result>
+		</action>
+		<action name="Inserir"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="prepararInserir">
 			<result name="SUCCESS">pages/inserir.jsp</result>
 			<result name="ERROR">pages/erro.jsp</result>
-		</action>
-		<action name="Inserir">
-			<result>pages/inserir.jsp</result>
 		</action>
 		<action name="InserirMusica"
 			class="br.com.test.struts2.controllers.impl.MusicaController"

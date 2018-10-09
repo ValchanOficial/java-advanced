@@ -59,7 +59,7 @@ public class MusicaController extends Controller<Musica, Integer>{
 	public String inserir() {
 		try {
 			Musica musica = getModelo();
-			Album albumSelecionado = albumDao.porId(getId());
+			Album albumSelecionado = albumDao.porId(getAlbumId());
 			musica.setAlbum(albumSelecionado);
 			dao.inserir(musica);
 			return SUCCESS;
@@ -70,7 +70,10 @@ public class MusicaController extends Controller<Musica, Integer>{
 	@Override
 	public String alterar() {
 		try {
-			this.dao.atualizar(getModelo());
+			Musica musica = getModelo();
+			Album albumSelecionado = albumDao.porId(getAlbumId());
+			musica.setAlbum(albumSelecionado);
+			dao.atualizar(musica);
 			return SUCCESS;
 		}catch(Exception e) {
 			return ERROR;
@@ -91,6 +94,8 @@ public class MusicaController extends Controller<Musica, Integer>{
 		try {
 			Musica musica = this.dao.porId(getId());
 			setModelo(musica);
+			albuns = albumDao.todos();
+			setAlbumId(musica.getAlbum().getId());
 			return SUCCESS;
 		}catch(Exception e) {
 			return ERROR;

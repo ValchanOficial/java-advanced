@@ -6,15 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Detalhes de álbum</title>
+		<title>Detalhes da música</title>
 	</head>
 	<body>
-		<h2>Detalhes de álbum</h2>
+		<h2>Detalhes da música</h2>
 		<br/><br/>
-			<s:textfield label="Código do álbum" name="modelo.id" disabled="true"/>
-			<s:textfield label="Titulo do álbum" name="modelo.nome" disabled="true"/>
-			<s:textfield label="Ano de lançamento" name="modelo.ano" disabled="true"/>
+			<s:textfield label="Código da música" name="modelo.id" disabled="true"/>
+			<s:textfield label="Titulo da música" name="modelo.nome" disabled="true"/>
 			<br/>
-			<a href="/TreinaWebStruts2/Album/ListarAlbuns">Voltar à lista de álbuns</a>
+			<a href="/TreinaWebStruts2/Musica/ListarMusicas">Voltar à lista de músicas</a>
 	</body>
 </html>

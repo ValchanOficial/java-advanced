@@ -2,7 +2,6 @@ package br.com.test.struts2.models;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,11 +20,14 @@ public class Album implements Serializable{
 	@GeneratedValue
 	@Column(name = "ALB_ID")
 	private int id;
+	
 	@Column(name = "ALB_NOME")
 	private String nome;
+	
 	@Column(name = "ALB_ANO_LANCAMENTO")
 	private int ano;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "album")//bidirecional
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "album", orphanRemoval = true)//bidirecional
 	private List<Musica> musicas;
 	
 	public int getId() {

@@ -20,8 +20,10 @@ public class Musica implements Serializable{
 	@GeneratedValue
 	@Column(name = "MUS_ID")
 	private int id;
+	
 	@Column(name = "MUS_NOME")
 	private String nome;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ALB_ID")
 	private Album album;

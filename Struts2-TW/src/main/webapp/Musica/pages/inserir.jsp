@@ -14,7 +14,7 @@
 		<s:form action="InserirMusica">
 			<s:textfield label="Titulo da música" name="modelo.nome"/>
 			<s:select label="Álbum" headerKey="-1" headerValue="Selecione um álbum"
-						list="albuns" name="albumId" listKey="nome" listValue="id"/>
+						list="albuns" name="albumId" listKey="id" listValue="nome"/>
 			<s:submit/>
 		</s:form>
 	</body>
