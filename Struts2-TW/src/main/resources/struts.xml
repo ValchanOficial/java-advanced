@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-"http://struts.apache.org/dtds/struts-2.0.dtd">
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
 <struts>
+	<!-- LOGIN TESTE -->
 	<package name="teste" namespace="/Teste"
 		extends="struts-default">
 		<action name="FazerLogin">
@@ -14,97 +16,104 @@
 			<result name="ERROR">pages/erro.jsp</result>
 		</action>
 	</package>
+
+	<!-- ALBUM -->
 	<package name="albuns" namespace="/Album"
 		extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult"></result-type>
+		</result-types>
 		<action name="ListarAlbuns"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="listar">
-			<result name="SUCCESS">pages/listar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">album.listar.tiles</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
-
 		<action name="Inserir">
-			<result>pages/inserir.jsp</result>
+			<result type="tiles">album.inserir.tiles</result>
 		</action>
-
 		<action name="InserirAlbum"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="inserir">
-			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
-
 		<action name="Alterar"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="prepararAlterar">
-			<result name="SUCCESS">pages/alterar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">album.alterar.tiles</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
-
 		<action name="AlterarAlbum"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="alterar">
-			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
-
 		<action name="Excluir"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="deletar">
-			<result name="SUCCESS" type="redirectAction">ListarAlbuns</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarAlbuns</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
 		<action name="Detalhar"
 			class="br.com.test.struts2.controllers.impl.AlbumController"
 			method="detalhar">
-			<result name="SUCCESS">pages/detalhar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">album.detalhar.tiles</result>
+			<result name="ERROR" type="tiles">album.erro.tiles</result>
 		</action>
 	</package>
 
-	<package name="musicas" namespace="/Musica" extends="struts-default">
+	<!-- MUSICA -->
+	<package name="musicas" namespace="/Musica"
+		extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult"></result-type>
+		</result-types>
+		
 		<action name="ListarMusicas"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="listar">
-			<result name="SUCCESS">pages/listar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">musica.listar.tiles</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 		<action name="Inserir"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="prepararInserir">
-			<result name="SUCCESS">pages/inserir.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">musica.inserir.tiles</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 		<action name="InserirMusica"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="inserir">
-			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 		<action name="Alterar"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="prepararAlterar">
-			<result name="SUCCESS">pages/alterar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">musica.alterar.tiles</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 		<action name="AlterarMusica"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="alterar">
-			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
-
 		<action name="Excluir"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="deletar">
-			<result name="SUCCESS" type="redirectAction">ListarMusicas</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="redirectAction">/ListarMusicas</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 		<action name="Detalhar"
 			class="br.com.test.struts2.controllers.impl.MusicaController"
 			method="detalhar">
-			<result name="SUCCESS">pages/detalhar.jsp</result>
-			<result name="ERROR">pages/erro.jsp</result>
+			<result name="SUCCESS" type="tiles">musica.detalhar.tiles</result>
+			<result name="ERROR" type="tiles">musica.erro.tiles</result>
 		</action>
 	</package>
 </struts>

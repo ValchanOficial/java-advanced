@@ -2,6 +2,8 @@ package br.com.test.struts2.models;
 
 import java.io.Serializable;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,7 +29,7 @@ public class Album implements Serializable{
 	@Column(name = "ALB_ANO_LANCAMENTO")
 	private int ano;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "album", orphanRemoval = true)//bidirecional
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER, mappedBy = "album")
 	private List<Musica> musicas;
 	
 	public int getId() {
