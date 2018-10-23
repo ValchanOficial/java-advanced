@@ -14,6 +14,6 @@ Curso da [TreinaWeb](https://www.treinaweb.com.br/): Java Avançado.
  - Java Persistence API ([JPA](https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api));
  - [Tiles](https://mvnrepository.com/artifact/org.apache.struts/struts2-tiles-plugin);
  - [Log4j Core](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core) e [Log4j API](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api) (dependências necessárias)
- -  Bootstrap;
+ -  [Bootstrap](http://getbootstrap.com/);
  - Expressões Lambda.
 
