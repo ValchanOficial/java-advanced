@@ -10,11 +10,13 @@
 		<link rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-			crossorigin="anonymous">
+			crossorigin="anonymous"/>
 	</head>
 	<body>
 		<tiles:insertAttribute name="header" /><br/>
-		<tiles:insertAttribute name="body" /><br/>
+		<div class="container-fluid">
+			<tiles:insertAttribute name="body" />
+		</div>
 		<tiles:insertAttribute name="footer" />
 		<script
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"

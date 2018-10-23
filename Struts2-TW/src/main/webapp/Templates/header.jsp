@@ -4,8 +4,8 @@
 	<a class="navbar-brand" href="#">TreinaWeb</a>
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="/TreinaWebStruts2/Album/ListarAlbuns">Álbuns</a></li>
-			<a class="nav-item nav-link" href="/TreinaWebStruts2/Musica/ListarMusicas">Músicas</a></li>
+			<a class="nav-item nav-link" href="/TreinaWebStruts2/Album/ListarAlbuns">Álbuns</a>
+			<a class="nav-item nav-link" href="/TreinaWebStruts2/Musica/ListarMusicas">Músicas</a>
 		</div>
 	</div>
 </nav>

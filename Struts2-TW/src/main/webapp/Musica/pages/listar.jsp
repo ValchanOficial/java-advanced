@@ -2,17 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h2>Lista de músicas</h2>
-<br />
-<a href="/TreinaWebStruts2/Musica/Inserir">Inserir música..</a>
-<br />
+<br/>
+<a class="btn btn-primary" href="/TreinaWebStruts2/Musica/Inserir" role="button">Inserir música</a>
+<br/><br/>
 <s:if test="modelos.size() > 0">
-	<table style="border: 1px">
+	<table class="table table-bordered">
 		<thead>
-			<tr>
-				<td>Id da música</td>
-				<td>Nome da música</td>
-				<td>Álbum</td>
-				<td>Ações</td>
+			<tr class="bg-primary">
+				<th>Id</th>
+				<th>Nome da música</th>
+				<th>Álbum</th>
+				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>

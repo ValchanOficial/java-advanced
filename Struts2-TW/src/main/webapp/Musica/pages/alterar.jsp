@@ -6,8 +6,8 @@
 <br />
 <s:form action="AlterarMusica">
 	<s:hidden name="modelo.id" />
-	<s:textfield label="Titulo da música" name="modelo.nome" />
+	<s:textfield label="Titulo da música" name="modelo.nome" class="form-control form-control-sm"/>
 	<s:select label="Álbum" headerKey="-1" headerValue="Selecione um álbum"
-		list="albuns" name="albumId" listKey="id" listValue="nome" />
-	<s:submit />
+		list="albuns" name="albumId" listKey="id" listValue="nome" class="form-control form-control-sm"/>
+	<s:submit class="btn btn-primary"/>
 </s:form>
